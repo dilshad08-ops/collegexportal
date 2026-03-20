@@ -1,18 +1,34 @@
-// Redirect pages
+// Show logged user
+window.onload = function () {
+    let isLoggedIn = localStorage.getItem("login");
+    let user = localStorage.getItem("user");
 
-document.getElementById("student").onclick = function() {
-    window.location.href = "student.html";
+    if (isLoggedIn === "true") {
+        document.getElementById("loginBtn").innerText = user;
+    }
 };
 
-document.getElementById("professional").onclick = function() {
-    window.location.href = "professional.html";
+// Check login
+function checkLogin(page) {
+    let isLoggedIn = localStorage.getItem("login");
+
+    if (isLoggedIn === "true") {
+        window.location.href = page;
+    } else {
+        alert("First Login!");
+        window.location.href = "../login/intex2.html";
+    }
+}
+
+// Cards
+document.getElementById("student").onclick = function () {
+    checkLogin("student.html");
 };
 
-document.getElementById("parents").onclick = function() {
-    window.location.href = "parents.html";
+document.getElementById("professional").onclick = function () {
+    checkLogin("professional.html");
 };
 
-// Login button
-document.querySelector(".login-btn").onclick = function() {
-    alert("Login page coming soon");
+document.getElementById("parents").onclick = function () {
+    checkLogin("parents.html");
 };

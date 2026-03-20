@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="login-body">
+
+<div class="login-container">
+
+    <!-- Left -->
+    <div class="left">
+        <h1>Welcome to College Portal</h1>
+        <p>Login to continue</p>
+    </div>
+
+    <!-- Right -->
+    <div class="right">
+        <h2>User Login</h2>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <!-- Google Login Button -->
+        <div id="g_id_onload"
+            data-client_id="890466391187-qjl105n9u9294270jvnpst2i9le2bg4m.apps.googleusercontent.com"
+            data-callback="handleCredentialResponse">
+        </div>
+
+        <div class="g_id_signin" data-type="standard"></div>
+
+        <p id="error" class="error">Wrong username or password</p>
+    </div>
+
+</div>
+
+<!-- Google Script -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<script src="login.js"></script>
+
+</body>
+</html>
